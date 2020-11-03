@@ -1,0 +1,95 @@
+header {
+	background-color: black;
+}
+
+svg {
+	height: 1rem;
+	margin: 0 10px;
+}
+svg path {
+	fill: white;
+}
+
+nav ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	padding: 16px 0;
+}
+
+nav a:hover {
+	color: limegreen;
+}
+
+nav a:hover path {
+	fill: limegreen;
+}
+
+nav ul li {
+	display: flex;
+	justify-content: center;
+	position: relative;
+}
+
+
+nav ul li a {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.submenu ul {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	text-align: center;
+	z-index: 10;
+}
+
+.submenu:hover ul {
+	visibility: visible;
+	opacity: 1;
+	background-color: grey;
+	transition: all 0.7s ease;
+}
+
+.submenu ul li {
+	padding: 0;
+}
+
+
+@media(min-width: 768px) {
+	nav ul {
+		display: flex;
+		justify-content: center;
+	}
+
+	.submenu ul {
+		display: flex;
+		flex-direction: column;
+		white-space: nowrap;
+	}
+
+	nav>ul>li:nth-child(2) .submenu ul {
+		right: -80%;
+	}
+
+	nav>ul>li:nth-child(3) .submenu ul {
+		right: -80%;
+	}
+
+	nav>ul>li:last-child .submenu ul {
+		right: -30%;
+	}
+
+	/*.submenu ul li {
+		padding: 0 16px;
+	}*/
+}
